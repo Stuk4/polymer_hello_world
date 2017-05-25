@@ -1,0 +1,52 @@
+<link rel="import" href="../paper-inpout/paper-input.html">
+<link rel="import" href="./nombre-tutorial.html">
+
+<dom-module id="my-first-ce">
+
+	<template>	
+	<style>
+		:host{			
+			display: block;
+		}
+	</style>
+
+	<paper-input label="Nombre" value="{{name}}"></paper-input>		
+
+	<h1 id="titulo">Hola <nombre-tutorial name={{name}}></nombre-tutorial>, tienes [[edad]] </h1>
+	</template>		
+	<script>
+		Polymer({
+		 is: "my-first-ce",
+		 properties:{
+		 	name: {
+		 		type : String,
+		 		value : "default"		 		
+		 	},
+		 	edad : {
+		 		type : Number
+		 	}
+		 },
+		 created : function(){
+		 	console.log("on created")		 	
+		 },
+		 ready : function(){
+		 	console.log("on ready")
+		 	setTimeout(()=>{
+		 		//this.name = "Daniel L"
+		 	},3000)		 	
+		 },
+		 attached: function(){
+		 	console.log("on attached")		 	
+		 },
+		 detached : function(){
+		 	console.log("on attached")		 	
+		 },
+		 attributedChanged: function(){
+		 	console.log("attributedChanged")		 	
+		 }
+
+
+		})
+	</script>
+
+</dom-module>

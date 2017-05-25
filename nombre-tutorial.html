@@ -1,0 +1,24 @@
+<dom-module id="nombre-tutorial">
+	<template>
+		<span>mi nombre es {{name}}</span>
+	</template>
+	<script>
+		Polymer({
+			is :"nombre-tutorial",
+			properties:{
+				name:{
+					type:String,
+					value:"default", 
+					notify: true // notifica al padre el cambio
+				}
+			},
+			ready: function(){
+			setTimeout(()=>{
+		 		this.name = "qwerty"
+		 	},3000)	
+		}
+		})
+
+	</script>
+
+</dom-module>
